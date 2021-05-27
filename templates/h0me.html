@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1> Soren's Forum </h1>
+<p> Select or create a thread and start posting. </p>
+<p> You can use the @ followed by a users userid to highlight the message on their screen. </p>
+<p> You can also delete your own messages. </p>
+<form action="/1" method="POST">
+  <label>Choose a thread:</label>
+  <select name="threads" id="threads">
+    <option value="DSW">DSW</option>
+    <option value="Mobile Dev">Mobile Dev</option>
+    <option value="APcs">APcs</option>
+	{{ optionD }}
+  </select>
+  <input type="submit" value="Select">
+</form>
+
+<form action="/" method="POST">
+  <label for="fname">Create thread:</label>
+  <input type="text" name="newThread">
+  <input type="submit" value="Create">
+</form>
+
+{% endblock %}

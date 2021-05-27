@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{{ head }}
+
+{{ postz }}
+
+
+<form action="/1" method="POST">
+  <label for="fname">Submit a comment:</label><br>
+  <input type="text" name="firstQ"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+{% endblock %}
