@@ -9,4 +9,3 @@ Flask-OAuthlib
 pymongo>=3.1
 Flask-PyMongo
 dnspython
-
