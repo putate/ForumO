@@ -8,7 +8,7 @@ import pymongo
 import sys
 import pprint
 from bson.objectid import ObjectId
-# os.environ['OAUTHLIB_INSECURE_TRANSPORT']='1'
+os.environ['OAUTHLIB_INSECURE_TRANSPORT']='1'
 # This code originally from https://github.com/lepture/flask-oauthlib/blob/master/example/github.py
 # Edited by P. Conrad for SPIS 2016 to add getting Client Id and Secret from
 # environment variables, so that this will work on Heroku.
@@ -119,12 +119,12 @@ def get_postz(x):
         if 'user_data' in session:
             if post["author"] == session['user_data']['login']:
                 if str("@" + session['user_data']['login']) in post["message"]:
-                    options = options + Markup("<p style=color:green>" + post["author"] + str(": ") + post["message"] + "</p>") + Markup('<form action="/1" method="post"> <button type="submit" name="delete" value="'+str(post["_id"])+'">Delete</button> </form>')
+                    options = options + Markup("<p style=color:DarkOrchid>" + post["author"] + str(": ") + post["message"] + "</p>") + Markup('<form action="/1" method="post"> <button type="submit" name="delete" value="'+str(post["_id"])+'">Delete</button> </form>')
                 else:
                     options = options + Markup("<p>" + post["author"] + str(": ") + post["message"] + "</p>") + Markup('<form action="/1" method="post"> <button type="submit" name="delete" value="'+str(post["_id"])+'">Delete</button> </form>')
             else:
                 if str("@" + session['user_data']['login']) in post["message"]:
-                    options = options + Markup("<p style=color:green>" + post["author"] + str(": ") + post["message"] + "</p>") 
+                    options = options + Markup("<p style=color:DarkOrchid>" + post["author"] + str(": ") + post["message"] + "</p>") 
                 else:
                     options = options + Markup("<p>" + post["author"] + str(": ") + post["message"] + "</p>") 
         else:
