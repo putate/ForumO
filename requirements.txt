@@ -7,5 +7,6 @@ wheel
 gunicorn
 Flask-OAuthlib
 pymongo>=3.1
-bson
+Flask-PyMongo
 dnspython
+
